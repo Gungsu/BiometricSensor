@@ -1,0 +1,1 @@
+<h2 style="color: #ff9900; text-align: center;">Aguardando digital...</h2>
