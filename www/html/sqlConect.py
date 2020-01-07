@@ -6,7 +6,7 @@ conf = {
         "passwd": "sql12345",
         "database": "bancoNomesFinger",
         "tabela": "cadastro",
-        "colHexFinger": "finger"
+        "colHexFinger": "finger",
         "ident": "id"
 }
 
@@ -33,7 +33,7 @@ def addFingerDb(fingerHex, id):
     global cursor
     global conf
     global db
-    cmdSql = 'UPDATE '+str(conf["tabela"])+' SET '+str(conf["colHexFinger"])+' = '+"\'"+str(fingerHex)+"\'"+' WHERE'+str(conf["ident"])+' = '+str(id)
+    cmdSql = 'UPDATE '+str(conf["tabela"])+' SET '+str(conf["colHexFinger"])+' = '+"\'"+str(fingerHex)+"\'"+' WHERE '+str(conf["ident"])+' = '+str(id)
     cursor.execute(cmdSql)
     db.commit()
     return True
@@ -47,5 +47,3 @@ def verId(id):
     for row in cursor: countRow += 1
     r = [False,True][countRow>0]
     return (r)
-
-addFingerDb("dedoheq",2)
